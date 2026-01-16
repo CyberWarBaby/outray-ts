@@ -127,6 +127,8 @@ export interface ClientOptions {
   protocol?: "http" | "tcp" | "udp";
   /** Local port to tunnel to */
   port: number;
+  /** Remote port to request (for TCP/UDP). If 0, server assigns one. */
+  remotePort?: number;
   /** Callback when tunnel is established */
   onOpen?: (url: string) => void;
   /** HTTP request handler */

@@ -29,6 +29,7 @@ export class Client {
   private readonly apiKey: string;
   private readonly protocol: "http" | "tcp" | "udp";
   private readonly port: number;
+  private readonly remotePort: number;
   private readonly onOpen?: (url: string) => void;
   private readonly onRequest?: (req: IncomingRequest) => IncomingResponse | Promise<IncomingResponse>;
   private readonly onError?: (err: Error) => void;
@@ -43,6 +44,9 @@ export class Client {
     this.apiKey = options.apiKey;
     this.protocol = options.protocol ?? "http";
     this.port = options.port;
+    // For TCP/UDP, use remotePort if specified, otherwise 0 (server assigns)
+    // For HTTP, remotePort is not used (server gives a subdomain)
+    this.remotePort = options.remotePort ?? 0;
     this.onOpen = options.onOpen;
     this.onRequest = options.onRequest;
     this.onError = options.onError;
@@ -89,7 +93,7 @@ export class Client {
           type: MessageType.OPEN_TUNNEL,
           apiKey: this.apiKey,
           protocol: this.protocol,
-          remotePort: this.port,
+          remotePort: this.remotePort,
         };
         ws.send(JSON.stringify(handshake));
 
