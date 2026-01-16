@@ -1,0 +1,49 @@
+{
+  "name": "outray",
+  "version": "1.0.0",
+  "description": "A minimal TypeScript SDK for Outray tunneling service",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "lint": "eslint src --ext .ts",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "tunnel",
+    "websocket",
+    "http",
+    "tcp",
+    "udp",
+    "ngrok",
+    "localtunnel"
+  ],
+  "author": "CyberWarBaby",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CyberWarBaby/outray-ts.git"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.30",
+    "@types/ws": "^8.5.10",
+    "typescript": "^5.3.0",
+    "vitest": "^1.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "tsx": "^4.21.0",
+    "ws": "^8.14.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ]
+}
