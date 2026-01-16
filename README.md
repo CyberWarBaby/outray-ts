@@ -31,8 +31,6 @@ OUTRAY_API_KEY=your_api_key_here
 # Outray API Key (required)
 OUTRAY_API_KEY=
 
-# Optional: Custom server URL (defaults to wss://api.outray.dev)
-# OUTRAY_SERVER_URL=wss://api.outray.dev
 ```
 
 ## Quick Start
@@ -187,15 +185,3 @@ npm run build
 # Run tests
 npm test
 ```
-
-## Other SDKs
-
-| Language | Repository |
-|----------|------------|
-| Go | [outray-go](https://github.com/CyberWarBaby/outray-go) |
-| Python | [outray-py](https://github.com/CyberWarBaby/outray-py) |
-| TypeScript | [outray-ts](https://github.com/CyberWarBaby/outray-ts) (this repo) |
-
-## License
-
-MIT
